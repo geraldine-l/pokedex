@@ -9,7 +9,7 @@ const pokemonList = [
 	},
 ];
 
-function PokemonCard(props: PokemonCardprops) {
+function PokemonCard() {
 	const pokemon = {
 		image: pokemonList[1].imgSrc,
 		name: pokemonList[1].name,
