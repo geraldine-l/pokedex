@@ -10,11 +10,15 @@ interface NavBarProps {
   }
 
   function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }: NavBarProps) {
-
+    const pokemon = pokemonList[pokemonIndex];
+    if (!pokemon) return null;
     return (
-      <div>
-        <button onClick={() => setPokemonIndex(pokemonIndex - 1)} style={{ visibility: pokemonIndex === 0 ? "hidden" : "visible" }}>Précedent</button>
-        <button onClick={() => setPokemonIndex(pokemonIndex + 1)} style={{ visibility: pokemonIndex === pokemonList.length - 1 ? "hidden" : "visible" }} >Suivant</button>
+      <div className="NavBar">
+        {pokemonList.map((pokemon, index) => (
+          <button key={index} onClick={() => setPokemonIndex(index)}>
+            {pokemon.name}
+          </button>
+        ))}
       </div>
     );
   }
