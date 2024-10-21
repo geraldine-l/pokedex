@@ -37,10 +37,10 @@ function App() {
 				<PokemonCard pokemon={pokemonList[pokemonIndex]} />
 				<p>Using states</p>
 				<div>
-					<button onClick={() => setPokemonIndex(pokemonIndex - 1)}>
+					<button type="button" onClick={() => setPokemonIndex(pokemonIndex - 1)} style={{ visibility: pokemonIndex === 0 ? "hidden" : "visible" }}>
 						Précédent
 					</button>
-					<button onClick={() => setPokemonIndex(pokemonIndex + 1)}>
+					<button type="button" onClick={() => setPokemonIndex(pokemonIndex + 1)} style={{ visibility: pokemonIndex === pokemonList.length - 1 ? "hidden" : "visible" }}>
 						Suivant
 					</button>
 				</div>
